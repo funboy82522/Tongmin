@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signUp()">Sign Up</button>
+
+    <script type="module">
+        import { auth, createUserWithEmailAndPassword } from "./firebase-config.js";
+
+        async function signUp() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            try {
+                await createUserWithEmailAndPassword(auth, email, password);
+                alert("Signup successful!");
+                window.location.href = "index.html";
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+</body>
+</html>
