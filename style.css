@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#post-box {
+    margin: 20px auto;
+    width: 300px;
+}
+
+textarea {
+    width: 
